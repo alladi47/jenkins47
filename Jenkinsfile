@@ -16,6 +16,11 @@ pipeline{
                sh 'python3 -m pytest'
 	    }
 	}
+	stage('deploy') {
+           steps {
+              sh 'ansible-playbook deploy.yml'            
+	   }
+	}
     }
 }
 
