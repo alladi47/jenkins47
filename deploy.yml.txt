@@ -1,0 +1,12 @@
+- hosts: all
+  tasks:
+   - package:
+       name: git
+       state: present
+   - git:
+       repo: https://github.com/alladi47/jenkins47.git
+       version: master
+       dest: /home/ec2-user/anu
+   - copy:
+       src: /home/ec2-user/anu
+       dest: /var/www/html
